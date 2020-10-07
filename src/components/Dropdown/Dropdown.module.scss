@@ -1,0 +1,65 @@
+.DropdownContainer {
+  position: relative;
+}
+
+
+.Dropdown {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color4);
+  border-radius: 24px;
+  background-color: var(--color4);
+  color: #fff;
+  font-size: 20px;
+  padding: 0 10px;
+  height: 46px;
+  transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  &:hover,
+  &.active{
+    cursor: pointer;
+    color: #fff;
+    border-color: var(--color5);
+    box-shadow:
+      0 1.3px 1.1px rgba(0, 0, 0, 0.035),
+      0 10px 9px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.DropdownBox {
+  position: absolute;
+  z-index: 9;
+  top: 100%;
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 10px 0 0;
+  border-radius: 12px;
+  background-color: var(--color4);
+  border: 0px solid transparent;
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  pointer-events: none;
+  box-shadow:
+      0 1.3px 1.1px rgba(0, 0, 0, 0.035),
+      0 10px 9px rgba(0, 0, 0, 0.07);
+  & > li {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    &:hover,
+    &.active {
+      cursor: pointer;
+      color: var(--color4);
+      background-color: var(--color5);
+    }
+  }
+  &.active {
+    max-height: 300px;
+    padding: 12px 0;
+    border: 1px solid var(--color5);
+    pointer-events: all;
+  }
+}
